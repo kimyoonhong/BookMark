@@ -8,7 +8,9 @@
 - yum 레파지토리 설정에 필요한 createrepo 설치
 
 yum install -y --downloadonly --downloaddir=/root/repository createrepo
+
 - 컴파일 패키지
+
 yum -y install gcc gcc-c++ libtermcap-devel gdbm-devel zlib* libxml* freetype* libpng* libjpeg* iconv flex gmp ncurses-devel cmake.x86_64 libaio gnutls*
 
 - 설치 순서 
