@@ -5,7 +5,7 @@
 
 - 필요한 패키지 파일을 yum으로 다운로드 후 sftp로 파일전송 
 
-- 1 yum 레파지토리 설정에 필요한 createrepo 설치
+- yum 레파지토리 설정에 필요한 createrepo 설치
 
 yum install -y --downloadonly --downloaddir=/root/repository createrepo
 - 컴파일 패키지
