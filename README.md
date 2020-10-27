@@ -14,6 +14,7 @@ yum install -y --downloadonly --downloaddir=/root/repository createrepo
 yum -y install gcc gcc-c++ libtermcap-devel gdbm-devel zlib* libxml* freetype* libpng* libjpeg* iconv flex gmp ncurses-devel cmake.x86_64 libaio gnutls*
 
 - 설치 순서 
+
 yum -y install deltarpm-3.6-3.el7.x86_64.rpm 
 yum -y install python-deltarpm-3.6-3.el7.x86_64.rpm 
 yum -y install createrepo-0.9.9-28.el7.noarch.rpm
