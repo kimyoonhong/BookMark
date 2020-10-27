@@ -30,10 +30,15 @@ vi /etc/yum.repos.d/local.repo
 /etc/yum.repos.d/ 디렉토리에 임의의 파일을 만든다 (ex. local.repo)
 
 [local-repo] 
+
 name=local-repo 
+
 baseurl=file:///disk  (/disk 경로에 필요한 패키지 파일을 넣어둔다)
+
 gpgcheck=0 
+
 enabled=1 
+
 priority=1
 
 
