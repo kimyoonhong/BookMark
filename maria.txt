@@ -1,0 +1,52 @@
+yum install -y gcc gcc-c++ libtermcap-devel gdbm-devel zlib* libxml* freetype* libpng* libjpeg* iconv flex gmp ncurses-devel cmake.x86_64 libaio
+yum install cmake ncurses ncurses-devel bison gcc gcc-c++ gnutls-devel 
+ yum -y install gcc gcc-c++ libtermcap-devel gdbm-devel zlib* libxml* freetype* libpng* libjpeg* iconv flex gmp ncurses-devel cmake.x86_64 libaio gnutls*
+
+
+wget https://downloads.mariadb.com/MariaDB/mariadb-10.3/bintar-linux-x86_64/mariadb-10.3.25-linux-x86_64.tar.gz
+wget https://downloads.mariadb.org/interstitial/mariadb-10.4.15/bintar-linux-x86_64/mariadb-10.4.15-linux-x86_64.tar.gz/from/https%3A//ftp.harukasan.org/mariadb/
+
+tar xvfz mariadb-10.3.25.tar.gz 
+
+ cmake ../mariadb-10.1.47 -LH
+
+
+cmake -DWITH_READLINE=1 -DWITH_READLINE=1 -DWITH_SSL=bundled -DWITH_ZLIB=system -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci -DENABLED_LOCAL_INFILE=1 -DWITH_EXTRA_CHARSETS=all -DWITH_ARIA_STORAGE_ENGINE=1 -DWITH_XTRADB_STORAGE_ENGINE=1 -DWITH_ARCHIVE_STORAGE_ENGINE=1 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_PARTITION_STORAGE_ENGINE=1 -DWITH_BLACKHOLE_STORAGE_ENGINE=1 -DWITH_FEDERATEDX_STORAGE_ENGINE=1 -DWITH_PERFSCHEMA_STORAGE_ENGINE=1 -DINSTALL_SYSCONFDIR=/maria/mariadb-10.1.47/etc -DINSTALL_SYSCONF2DIR=/maria/mariadb-10.1.47/etc/my.cnf.d -DMYSQL_TCP_PORT=3307 -DCMAKE_INSTALL_PREFIX=/maria/mariadb-10.1.47 -DMYSQL_DATADIR=/maria/mariadb-10.1.47/data -DMYSQL_UNIX_ADDR=/maria/mariadb-10.1.47/socket/mysql.socket
+
+# chown mysql:mysql -R /maria/mariadb-10.1.47
+# chmod 755 /maria/mariadb-10.1.47 -R
+# cd /maria/mariadb-10.1.47/scripts
+# ./mysql_install_db --user=mysql --basedir=/maria/mariadb-10.1.47 --datadir=/maria/mariadb-10.1.47/data
+
+ chown mysql:mysql -R /maria/mariadb-10.1.47
+# chmod 755 /maria/mariadb-10.1.47 -R
+
+# cp /maria/mariadb-10.1.47/support-files/my-huge.cnf /maria/mariadb-10.1.47/etc/my.cnf
+
+심볼릭 링크 생성
+ln -s /maria/mariadb-10.1.47/bin/mysql /usr/bin/mariadb
+ln -s /maria/mariadb-10.1.47/bin/mysqldump /usr/bin/mariadbdump 
+
+cat /etc/systemd/system/mariadb.service
+
+# systemctl daemon-reload
+
+# systemctl enable mariadb
+
+# systemctl start mariadb
+
+# systemctl status mariadb
+
+
+
+
+=====================================================
+cp -a /maria/mariadb/support-files/mysql.server /etc/rc.d/init.d/mariadb
+
+chown mysql:mysql /server/mariadb -R
+
+/etc/rc.d/init.d/mariadb start
+
+/maria/mariadb/bin/mysqladmin -u root password '123qaz!@#'
+
+/maria/mariadb/bin/mysql -u root -p
