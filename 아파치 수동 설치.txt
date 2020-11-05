@@ -1,0 +1,82 @@
+*환경*
+OS: CentOS7.5
+Apache 2.4
+Tomcat Connector JK 1.2
+Jdk 8
+Tomcat 9
+apr 1.7
+
+디렉토리 : /app 
+
+1 아파치 설치
+
+- tar zxvf httpd-2.4.41.tar.gz
+- mv httpd-2.4.41 /app
+- cd /app/httpd-2.4.41
+- ./configure --prefix=/app/apache2.4.41 --enable-mods-shared=all --enable-so --enable-rewrite --enable-proxy --enable-proxy-ajp --enable-proxy-balaner --enable-proxy-http --enable-proxy-connect --enable-ssl --with-included-apr
+
+
+
+- make && make install
+
+-> apr 오류, apr-util
+
+2 apr 설치  
+
+- tar xvfz apr-1.7.0.tar.gz
+- mv apr-1.7.0 /app
+- cd /app/apr-1.7.0
+- ./configure --prefix=/app/apr1.7.0
+- make && make insall
+
+3 apr-util 설치 
+
+- tar xvfz apr-util-1.6.1.tar.gz
+- mv apr-util-1.6.1 /app
+- cd /app/apr-util-1.6.1
+- ./configure --prefix=/app/apr-util1.6.1 --with-apr=/app/apr1.7.0
+- make && make install
+
+make 시 에러가 발생함
+
+4. expat 설치 
+
+- tar xvfz expat-2.2.9.tar.gz
+- mv expat-2.2.9 /app
+- cd /app/expat-2.2.9
+- ./configure --prefix=/app/expat2.2.9
+- make && make install
+
+- 다시 cd /app/apr-util-1.6.1 폴더 이동
+
+- cd /app/apr-util-1.6.1
+- ./configure --prefix=/app/apr-util1.6.1 --with-apr=/app/apr1.7.0 --with-expat=/app/expat2.2.9
+- make && make insatll
+
+5. pcre  설치
+
+- tar xvfz pcre-8.00.tar.gz
+- mv pcre-8.00 /app
+- cd /app/pcre-8.00
+- ./configure --enable-utf8 --prefix=/app/pcre8.00
+- make && make install
+
+6. openssl 설치
+
+- tar xvfz openssl-1.0.2t.tar.gz
+- mv openssl-1.0.2t /app
+- cd /app/openssl-1.0.2t
+- ./config linux-x86_64 --prefix=/app/openssl1.0.2t --openssldir=/app/openssl1.0.2t shared
+ (오류나서 'linux-x86_64' 지우고 실행함)
+- make && make install
+
+7. 다시 apache 설치로 돌아감
+
+- cd /app/httpd-2.4.41
+- ./configure --prefix=/app/apache2.4.41 --enable-mods-shared=all --enable-so --enable-rewrite --enable-proxy --enable-proxy-ajp --enable-proxy-balaner --enable-proxy-http --enable-proxy-connect --enable-ssl --with-apr=/app/apr1.7.0 --with-apr-util=/app/apr-util1.6.1 --with-pcre=/app/pcre8.00 --with-ssl=/app/openssl1.0.2t
+- make && make install
+
+
+
+* Tomcat Connector JK 설치
+ tar zxvf tomcat-connectors-1.2.46-src.tar.gz
