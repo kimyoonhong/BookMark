@@ -5,10 +5,7 @@
 
 ## Spring Web MVC : 스프링 프레임워크에 있는 모듈, Web Service를 만든다  MVC 패턴을 사용해서 ( Model View Controller ) 
 
-|                      Servlet                |                           Spring Web MVC                                |
 
-|  웹 애플리케이션을 만들때 필요한 인터페이스  | 스프링 프레임워크에 있는 모듈                                            |
-|                                             | MVC 패턴을 사용해서 ( Model View Controller ) Web Service를 만든다       |
 
 
 
