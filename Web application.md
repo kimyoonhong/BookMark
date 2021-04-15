@@ -9,7 +9,7 @@
 
 
 
-# Servlet 과 Spring ( Servlet 을 사용하는 )  Spring Web MVC
+# * Servlet 과 Spring ( Servlet 을 사용하는 )  Spring Web MVC
 
 ## 정적 데이터만 전달하는 Web Server
 --- 
