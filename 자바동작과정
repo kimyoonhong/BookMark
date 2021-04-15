@@ -1,0 +1,39 @@
+*자바 동작 과정
+
+1. 코드 작성
+2. 코드 컴파일
+3. JVM으로 실행
+
+ex) Hello world 출력과정  
+
+1. 코드작성
+ 
+ Main.java 파일 작성 
+ 
+ public class Main{
+	  public static void main(String[] args) {
+		
+		System.out.println("hello world");
+	}
+}
+
+2. 코드 컴파일
+   
+   cmd 창에서 Main.java의 디렉토리로 접근 후, 
+   
+   javac Main.java 
+     
+     -> .java 파일을 .class 라는 Java byte code로 변환시켜준다. 
+      하지만 Byte Code는 기계어가 아니기 때문에 OS에서 바로 실행되지 않는다.
+      이때, JVM( Java Virtual Machine)이 Byte Code를 이해할 수 있도록 해석을 도와준다.
+
+3. JVM으로 실행
+
+    마찬가지로 cmd 창에서 디렉토리로 접근 후,
+    
+    java Main
+    
+    cmd 창 : hello world
+    
+  
+  
