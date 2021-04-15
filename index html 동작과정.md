@@ -2,6 +2,7 @@
 
 
 
+![캡처](https://user-images.githubusercontent.com/64052675/114948264-9c9a5400-9e89-11eb-9b46-80e2b0816828.PNG)
 
 
 
