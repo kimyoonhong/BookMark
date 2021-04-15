@@ -1,6 +1,13 @@
 # index.html 이 화면에 표출되기까지의 순서
 
+-------------------  톰켓시작후 과정 ----------------------
+
 1. 웹 어플리케이션이 실행되면 Tomcat (WAS)에 의해 web.xml이 loading 된다.
+
 2. web.xml에 등록되어있는 ContextLoaderListener(Java Class)가 생성된다.
    ContextLoaderListener는 ServletContextListener 인터페이스를 구현하고있으며, ApplicationContext를 생성하는 역할을 수행한다.
+
 3. 생성된 ContextLoaderListener는 root-context.xml을 loading 한다.
+
+
+-------------- 웹에서 Request 이후 동작과정 -------------------------
