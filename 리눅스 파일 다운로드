@@ -2,4 +2,6 @@
 
   pscp -P [포트번호] -r [유저ID]@[리눅스 서버IP]:[파일경로] [다운로드 받을 윈도우 경로] 
   
+  예시) pscp -P 22 -r komeaweb@komeaweb.cafe24.com:/komeaweb/tomcat/webapps/ROOT D:/komea
+  
   -r : 디렉토리 전체
